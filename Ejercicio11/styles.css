@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#lista-links {
+  list-style: none;
+  padding: 10px;
+  }
+
+#lista-links a {
+  text-decoration: none;
+  color: #1a5fb4;
+  padding: 5px 12px;
+  display: block;
+  transition: background-color 0.2s ease;
+  width: fit-content;
+}
+
+#lista-links a:hover {
+    background-color: #dbe9f4;
+    color: #144d96;
+}
+
+#lista-links li:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+#lista-links li:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#lista-links a::before {
+    content: "-> ";
+    color: #1a5fb4;
+    font-weight: bold;
+}
+
+#lista-links a::after {
+    content: " :)";
+    color: #1a5fb4;
+    font-weight: bold;
+}
