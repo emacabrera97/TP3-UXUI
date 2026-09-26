@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0px; 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a5fb4;
+    padding: 15px;
+}
+
+#logo {
+    height: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: sans-serif;
+}
