@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#logo {
+    max-height: 40px;
+    border-radius: 50%;
+}
+
+.menu-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hamburguesa {
+    display: none; /* oculto en desktop, solo aparece en mobile */
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a5fb4;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: block; /* ahora sí se muestra el ícono */
+    }
+
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a5fb4;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .menu-toggle:checked ~ .menu {
+        max-height: 300px; /* se "despliega" */
+    }
+}

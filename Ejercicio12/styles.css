@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* scroll animado, sin JS */
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2 {
+    color: #1a5fb4;
+}
+
+/* --- TOOLTIP --- */
+.tooltip-contenedor {
+    position: relative; /* punto de referencia para el tooltip */
+    display: inline-block;
+    border-bottom: 1px dotted #1a5fb4;
+    cursor: help;
+    color: #1a5fb4;
+    font-weight: bold;
+}
+
+.tooltip-texto {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute; /* se posiciona respecto al .tooltip-contenedor */
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+}
+
+.tooltip-texto::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-contenedor:hover .tooltip-texto {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- BOTÓN VOLVER ARRIBA --- */
+#volver-arriba {
+    position: fixed; /* se posiciona respecto a la ventana, no a un padre */
+    bottom: 30px;
+    right: 30px;
+    background-color: #1a5fb4;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: background-color 0.2s ease;
+}
+
+#volver-arriba:hover {
+    background-color: #144d96;
+}

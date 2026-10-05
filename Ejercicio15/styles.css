@@ -1,15 +1,16 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
+/* Elijo usar un enfoque desktop first puesto que el enunciado primero pide
+que el sidebar este y que este se oculte al achicar la pantalla, en lugar de 
+iniciar de algo mas simple a mas complejo, vamos de mas complejo a mas
+simple. */
 
+/* --- Estilos base: desktop --- */
 .layout {
     display: grid;
     grid-template-areas:
         "header  header"
         "sidebar main"
         "footer  footer";
-    grid-template-columns: 75px 1fr;
+    grid-template-columns: 200px 1fr;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
@@ -50,4 +51,26 @@ footer {
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+
+/* --- Breakpoint 1: tablets --- */
+@media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 100px 1fr; /* sidebar más angosto */
+    }
+}
+
+/* --- Breakpoint 2: celulares --- */
+@media (max-width: 768px) {
+    .layout {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr; /* una sola columna */
+    }
+
+    .sidebar {
+        display: none; /* el sidebar desaparece */
+    }
 }

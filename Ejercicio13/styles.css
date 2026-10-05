@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 40px;
+}
+
+form {
+    width: 350px;
+}
+
+h1 {
+    color: #1a5fb4;
+    font-size: 20px;
+}
+
+/* --- Inputs y textarea --- */
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #1ab424;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #1a5fb4;
+    outline: none;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* --- Botón --- */
+button {
+    background-color: #1a5fb4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+/* hover sobre el boton */
+button:hover {
+    background-color: #144d96;
+}
+/* clickear el boton */
+button:active {
+    background-color: #0d3a73;
+}

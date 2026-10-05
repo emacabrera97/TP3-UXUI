@@ -36,7 +36,7 @@
     font-weight: bold;
 }
 
-#lista-links a::after {
+#lista-links a:hover::after {
     content: " :)";
     color: #1a5fb4;
     font-weight: bold;

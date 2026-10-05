@@ -1,0 +1,18 @@
+:root {
+    --color-primario: #1a5fb4;
+    --color-primario-oscuro: #144d96;
+    --color-secundario: #f4f4f4;
+    --color-texto: #222;
+    --color-fondo: #ffffff;
+    --espaciado: 16px;
+    --radio-borde: 8px;
+}
+
+/* --- MODO OSCURO --- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-secundario: #1e1e1e;
+        --color-texto: #eeeeee;
+        --color-fondo: #2b2b2b;
+    }
+}
