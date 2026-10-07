@@ -1,0 +1,275 @@
+/* ========================================
+   1. VARIABLES
+   ======================================== */
+:root {
+    --color-primario: #1a5fb4;
+    --color-primario-oscuro: #144d96;
+    --color-fondo-claro: #f4f4f4;
+    --color-texto: #222;
+    --espaciado: 20px;
+    --radio-borde: 8px;
+}
+
+/* ========================================
+   2. RESET Y BASE
+   ======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--color-texto);
+    padding-top: 70px; /* compensa el navbar fijo */
+}
+
+h1, h2, h3 {
+    color: var(--color-primario);
+}
+
+section {
+    padding: 60px var(--espaciado);
+}
+
+/* ========================================
+   3. NAVBAR (Flexbox + fixed)
+   ======================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primario);
+    padding: 15px var(--espaciado);
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--espaciado);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   4. HERO (con animación)
+   ======================================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("https://images.unsplash.com/photo-1497366216548-37526070297c") center/cover;
+    color: white;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-contenido {
+    animation: aparecer 0.8s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    margin-bottom: 20px;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: var(--radio-borde);
+    transition: background-color 0.2s;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-primario-oscuro);
+}
+
+/* ========================================
+   5. SERVICIOS (Grid)
+   ======================================== */
+.servicios {
+    background-color: var(--color-fondo-claro);
+    text-align: center;
+}
+
+.servicios h2 {
+    margin-bottom: var(--espaciado);
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espaciado);
+}
+
+.card-servicio {
+    background-color: white;
+    padding: var(--espaciado);
+    border-radius: var(--radio-borde);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   6. TESTIMONIOS (carrusel con scroll-snap)
+   ======================================== */
+.testimonios {
+    text-align: center;
+}
+
+.testimonios h2 {
+    margin-bottom: var(--espaciado);
+}
+
+.testimonios-carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--espaciado);
+}
+
+.testimonio {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background-color: var(--color-fondo-claro);
+    padding: 30px;
+    border-radius: var(--radio-borde);
+}
+
+.testimonio p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* ========================================
+   7. FORMULARIO DE CONTACTO (Flexbox)
+   ======================================== */
+.contacto {
+    background-color: var(--color-fondo-claro);
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: var(--espaciado);
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.campo input,
+.campo textarea {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: var(--radio-borde);
+    transition: border-color 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.form-contacto button {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-contacto button:hover {
+    background-color: var(--color-primario-oscuro);
+}
+
+/* ========================================
+   8. FOOTER (Flexbox)
+   ======================================== */
+footer {
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: var(--espaciado);
+}
+
+/* ========================================
+   9. MEDIA QUERIES (desktop first)
+   ======================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    body {
+        padding-top: 100px; /* el navbar ahora es más alto (2 filas) */
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+}
